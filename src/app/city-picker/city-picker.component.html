@@ -1,0 +1,15 @@
+<div class="card flex justify-content-center">
+  <p-overlayPanel #op>
+    <ng-template pTemplate="content">
+      <div class="card flex justify-content-center">
+        <p-autoComplete
+          [(ngModel)]="selectedLocation"
+          [suggestions]="locationOptions"
+          field="name"
+          (keydown.enter)="searchLocations()"
+        ></p-autoComplete>
+      </div>
+    </ng-template>
+  </p-overlayPanel>
+  <p-button (click)="op.toggle($event)" icon="pi pi-image" label="Show"></p-button>
+</div>
