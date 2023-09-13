@@ -1,18 +1,21 @@
 <div class="card flex justify-content-center">
-  <p-overlayPanel #op>
-    <ng-template pTemplate="content">
-      <div class="card flex">
-        <h3>Select Location</h3>
+  <p-overlayPanel #op [showCloseIcon]="true">
+    <ng-template pTemplate="content align-content-center">
+      <div class="card flex flex-column gap-2">
+        <h3 class="text-center m-2">Select Location</h3>
         <p-autoComplete
           [(ngModel)]="selectedLocationSearch"
           [suggestions]="locationOptions"
           field="name"
+          class="m-2"
           (keydown.enter)="enterSelectMethod()"
           (completeMethod)="completeMethod()"
           (onSelect)="selectMethod($event)"
+          class="p2"
         ></p-autoComplete>
+        <button pButton pRipple label="Add Location" class="p-button-success m-2"></button>
       </div>
     </ng-template>
   </p-overlayPanel>
-  <p-button (click)="op.toggle($event)" icon="pi pi-image" label="Choose Location"></p-button>
+  <p-button (click)="op.toggle($event)" icon="pi pi-plus" styleClass="p-button-rounded"></p-button>
 </div>

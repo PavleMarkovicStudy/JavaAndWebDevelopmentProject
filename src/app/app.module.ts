@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // Module imports for PrimeNg
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 
@@ -26,6 +27,7 @@ import { CityPickerComponent } from './city-picker/city-picker.component';
     ButtonModule,
     BrowserAnimationsModule,
     AutoCompleteModule,
+    DialogModule,
     FormsModule,
   ],
   providers: [],

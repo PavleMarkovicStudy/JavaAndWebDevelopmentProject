@@ -1,0 +1,8 @@
+// this will keep the add button for adding locations to the bottom and center
+
+.add-button {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
