@@ -72,4 +72,8 @@ export class CityPickerComponent {
     const { country, lat, lon, name } = data;
     return new GeoLocation(country, lat, lon, name);
   }
+
+  addLocationMethod() {
+    console.log('this will add the location as a card later when we have that');
+  }
 }
