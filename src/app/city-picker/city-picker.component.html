@@ -3,10 +3,12 @@
     <ng-template pTemplate="content">
       <div class="card flex justify-content-center">
         <p-autoComplete
-          [(ngModel)]="selectedLocation"
+          [(ngModel)]="selectedLocationSearch"
           [suggestions]="locationOptions"
           field="name"
-          (keydown.enter)="searchLocations()"
+          (keydown.enter)="enterSelectMethod()"
+          (completeMethod)="completeMethod()"
+          (onSelect)="selectMethod($event)"
         ></p-autoComplete>
       </div>
     </ng-template>
