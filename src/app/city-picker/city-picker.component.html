@@ -13,7 +13,13 @@
           (onSelect)="selectMethod($event)"
           class="p2"
         ></p-autoComplete>
-        <button pButton pRipple label="Add Location" class="p-button-success m-2"></button>
+        <button
+          pButton
+          pRipple
+          label="Add Location"
+          class="p-button-success m-2"
+          (click)="addLocationMethod()"
+        ></button>
       </div>
     </ng-template>
   </p-dialog>

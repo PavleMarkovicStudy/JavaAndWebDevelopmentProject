@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 // weather api for data using those
 import { LocationService } from '../location.service';
 import { GeoLocation } from '../classes';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-city-picker',
@@ -13,7 +14,7 @@ import { GeoLocation } from '../classes';
 export class CityPickerComponent {
   // variable for display the dialog button or not
   visible: boolean = false;
-  dialogPosition: string = "top";
+  dialogPosition: string = 'top';
   // selected city will be the citie the user selects at the end
   selectedLocationSearch: string = '';
   selectedLocationObject: GeoLocation | undefined = undefined;
@@ -21,7 +22,7 @@ export class CityPickerComponent {
   // each search is going to be after enter or after about 1.5 seconds of no writing
   locationOptions: GeoLocation[] = [];
 
-  constructor(private locationService: LocationService) {}
+  constructor(private locationService: LocationService, private globalService: GlobalService) {}
 
   // updates options by calling api and mapping the data
   async updateLocationOptions() {
@@ -82,6 +83,9 @@ export class CityPickerComponent {
   }
 
   addLocationMethod() {
-    console.log('this will add the location as a card later when we have that');
+    if (this.selectedLocationObject) {
+      console.log('adding location');
+      this.globalService.addLocation(this.selectedLocationObject);
+    }
   }
 }
