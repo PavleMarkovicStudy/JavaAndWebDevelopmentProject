@@ -15,9 +15,10 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 
 import { ApiLogAndTestComponent } from './api-log-and-test/api-log-and-test.component';
 import { CityPickerComponent } from './city-picker/city-picker.component';
+import { LocationCardComponent } from './location-card/location-card.component';
 
 @NgModule({
-  declarations: [AppComponent, ApiLogAndTestComponent, CityPickerComponent],
+  declarations: [AppComponent, ApiLogAndTestComponent, CityPickerComponent, LocationCardComponent],
   // after importing modules they have to be decalred here
   imports: [
     BrowserModule,

@@ -61,7 +61,7 @@ export class CityPickerComponent {
   // calls api and fetches results so that the user can choose
   async fetchPossibleLocations(search: string) {
     try {
-      const response = await this.locationService.getLocationOptions(search, 5).toPromise();
+      const response = await this.locationService.getLocationOptions(search, 5);
       return response;
     } catch (error) {
       // Handle errors here

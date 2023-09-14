@@ -13,9 +13,17 @@ export class LocationService {
 
   constructor(private http: HttpClient) {}
 
-  getLocationOptions(search: string, limit: number): Observable<any> {
+  // function for getting a location with lattitude and longitude
+  async getLocationOptions(search: string, limit: number): Promise<any> {
     const url = `${this.apiUrl}${search}&limit=${limit}&appid=${this.apiKey}`;
-    const response = this.http.get(url);
-    return response
+
+    try {
+      const response = await this.http.get(url).toPromise();
+      return response;
+    } catch (error) {
+      // Handle errors here
+      console.error(error);
+      throw error; // You can rethrow the error for the caller to handle
+    }
   }
 }

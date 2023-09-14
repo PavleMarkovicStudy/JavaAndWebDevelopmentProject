@@ -12,9 +12,13 @@ export class AppComponent {
   locations: GeoLocation[] = [];
   constructor(private globalService: GlobalService) {}
 
-  logService() {
+  subscribeToLocations() {
     this.globalService.getLocations().subscribe((locations) => {
-      console.log(locations);
+      this.locations = locations;
     });
+  }
+
+  ngOnInit(): void {
+    this.subscribeToLocations();
   }
 }

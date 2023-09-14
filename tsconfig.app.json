@@ -3,6 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
+    // allows location card component to have a GeoLocation as input
+    // and prevents compile errors
+    "strictPropertyInitialization": false,
     "types": []
   },
   "files": [
