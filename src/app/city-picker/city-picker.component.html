@@ -1,5 +1,5 @@
 <div class="card flex justify-content-center">
-  <p-overlayPanel #op [showCloseIcon]="true">
+  <p-dialog [(visible)]="visible" appendTo="body">
     <ng-template pTemplate="content align-content-center">
       <div class="card flex flex-column gap-2">
         <h3 class="text-center m-2">Select Location</h3>
@@ -16,6 +16,6 @@
         <button pButton pRipple label="Add Location" class="p-button-success m-2"></button>
       </div>
     </ng-template>
-  </p-overlayPanel>
-  <p-button (click)="op.toggle($event)" icon="pi pi-plus" styleClass="p-button-rounded"></p-button>
+  </p-dialog>
+  <p-button (click)="showCityPicker()" icon="pi pi-plus" styleClass="p-button-rounded"></p-button>
 </div>

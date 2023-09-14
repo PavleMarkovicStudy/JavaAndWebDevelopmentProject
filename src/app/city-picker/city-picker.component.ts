@@ -11,6 +11,9 @@ import { GeoLocation } from '../classes';
   styleUrls: ['./city-picker.component.scss'],
 })
 export class CityPickerComponent {
+  // variable for display the dialog button or not
+  visible: boolean = false;
+  dialogPosition: string = "top";
   // selected city will be the citie the user selects at the end
   selectedLocationSearch: string = '';
   selectedLocationObject: GeoLocation | undefined = undefined;
@@ -71,6 +74,11 @@ export class CityPickerComponent {
   mapResponseToGeoLocation(data: any): GeoLocation {
     const { country, lat, lon, name } = data;
     return new GeoLocation(country, lat, lon, name);
+  }
+
+  // function for displaying the city picker
+  showCityPicker() {
+    this.visible = true;
   }
 
   addLocationMethod() {
