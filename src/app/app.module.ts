@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 
 import { ApiLogAndTestComponent } from './api-log-and-test/api-log-and-test.component';
@@ -28,6 +29,7 @@ import { LocationCardComponent } from './location-card/location-card.component';
     ButtonModule,
     BrowserAnimationsModule,
     AutoCompleteModule,
+    CardModule,
     DialogModule,
     FormsModule,
   ],

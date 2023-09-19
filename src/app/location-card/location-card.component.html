@@ -1,8 +1,12 @@
-<p>Location Card</p>
-<div class="flex flex-column" style="border: 1, 1">
-  <div>{{ location.country }}</div>
-  <div>{{ location.lat }}</div>
-  <div>{{ location.lon }}</div>
-  <div>{{ location.name }}</div>
-  <div>{{ weatherData }}</div>
-</div>
+<p-card header="{{ cardTitle }}" subheader="{{ location.weather?.description }}" [style]="{ width: '360px' }">
+  <ng-template pTemplate="header"></ng-template>
+  <div class="flex flex-column align-items-center">
+    <div>{{ location.weather?.currentTemp }}</div>
+    <div>{{ location.weather?.minTemp }}</div>
+    <div>{{ location.weather?.maxTemp }}</div>
+    <div>{{ location.weather?.humidity }}</div>
+    <div>{{ location.weather?.pressure }}</div>
+    <div>{{ location.weather?.wind }}</div>
+    <div>{{ location.weather?.visibility }}</div>
+  </div>
+</p-card>

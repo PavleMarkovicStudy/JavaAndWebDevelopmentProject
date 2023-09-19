@@ -1,5 +1,6 @@
 <app-city-picker class="add-button"></app-city-picker>
 <app-api-log-and-test></app-api-log-and-test>
+<app-location-card [location]="mockLocation"></app-location-card>
 <ng-container *ngFor="let location of locations">
   <app-location-card [location]="location"></app-location-card>
 </ng-container>

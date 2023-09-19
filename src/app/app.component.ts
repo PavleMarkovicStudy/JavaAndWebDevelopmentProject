@@ -10,6 +10,22 @@ import { GeoLocation } from './classes';
 export class AppComponent {
   title = 'java-and-web-development';
   locations: GeoLocation[] = [];
+  mockLocation: GeoLocation = {
+    name: 'Rome',
+    country: 'IT',
+    lat: 0,
+    lon: 0,
+    weather: {
+      humidity: 54,
+      pressure: 1.02,
+      currentTemp: 15,
+      minTemp: 10,
+      maxTemp: 20,
+      visibility: 0,
+      description: 'Cloudy',
+      wind: 3.4,
+    },
+  };
   constructor(private globalService: GlobalService) {}
 
   subscribeToLocations() {
