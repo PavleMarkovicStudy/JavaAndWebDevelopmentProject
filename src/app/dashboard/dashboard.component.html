@@ -4,6 +4,12 @@
       *ngFor="let location of locations"
       class="col-12 md:col-4 lg:col-3 xl:col-2 flex flex-col center-content"
       style="min-width: min-content"
+      pDraggable="locations"
+      (onDragStart)="dragStart(location)"
+      (onDragEnd)="dragEnd(location)"
+      dragEffect="link"
+      pDroppable="locations"
+      (onDrop)="drop(location)"
     >
       <app-location-card [location]="location"></app-location-card>
     </div>

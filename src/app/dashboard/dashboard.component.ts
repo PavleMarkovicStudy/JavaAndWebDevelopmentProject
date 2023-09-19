@@ -8,6 +8,9 @@ import { GeoLocation } from '../classes';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+  initialDragLocation: GeoLocation | undefined;
+  finalDragLocation: GeoLocation | undefined;
+
   mockLocationOne: GeoLocation = {
     name: 'Rome',
     country: 'IT',
@@ -25,18 +28,18 @@ export class DashboardComponent {
     },
   };
   mockLocationTwo: GeoLocation = {
-    name: 'Rome',
-    country: 'IT',
+    name: 'London',
+    country: 'GB',
     lat: 0,
     lon: 0,
     weather: {
-      humidity: 54,
+      humidity: 80,
       pressure: 1.02,
-      currentTemp: 15,
-      minTemp: 10,
-      maxTemp: 20,
-      visibility: 0,
-      description: 'Cloudy',
+      currentTemp: 4,
+      minTemp: 0,
+      maxTemp: 10,
+      visibility: 4.3,
+      description: 'rainny',
       wind: 3.4,
     },
   };
@@ -130,6 +133,40 @@ export class DashboardComponent {
     this.mockLocationSeven,
   ];
   constructor(private globalService: GlobalService) {}
+
+  dragStart(location: GeoLocation) {
+    this.initialDragLocation = location;
+    console.log(location, 'drag started');
+  }
+
+  dragEnd(location: GeoLocation) {}
+
+  drop(location: GeoLocation) {
+    this.finalDragLocation = location;
+    this.exchangeLocationsIndexes();
+  }
+
+  exchangeLocationsIndexes() {
+    if (this.initialDragLocation === undefined || this.finalDragLocation === undefined) {
+      console.error('Initial or final location is undefined. Cannot swap.');
+      this.initialDragLocation = undefined;
+      this.finalDragLocation = undefined;
+      return;
+    }
+
+    const initialIndex = this.locations.findIndex((location) => location === this.initialDragLocation);
+    const finalIndex = this.locations.findIndex((location) => location === this.finalDragLocation);
+
+    if (initialIndex === -1 || finalIndex === -1) {
+      console.error('Initial or final location not found in the array. Cannot swap.');
+      return;
+    }
+
+    [this.locations[initialIndex], this.locations[finalIndex]] = [
+      this.locations[finalIndex],
+      this.locations[initialIndex],
+    ];
+  }
 
   // subscribeToLocations() {
   //   this.globalService.getLocations().subscribe((locations) => {
