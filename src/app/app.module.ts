@@ -13,6 +13,7 @@ import { DialogModule } from 'primeng/dialog';
 import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { StyleClassModule } from 'primeng/styleclass';
 import { DragDropModule } from 'primeng/dragdrop';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -24,7 +25,6 @@ import { CityPickerComponent } from './city-picker/city-picker.component';
 import { LocationCardComponent } from './location-card/location-card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { FooterComponent } from './footer/footer.component';
     LocationCardComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent,
   ],
   // after importing modules they have to be decalred here
   imports: [
@@ -47,6 +46,7 @@ import { FooterComponent } from './footer/footer.component';
     ButtonModule,
     ToastModule,
     DragDropModule,
+    StyleClassModule,
     BrowserAnimationsModule,
     AutoCompleteModule,
     ConfirmDialogModule,
