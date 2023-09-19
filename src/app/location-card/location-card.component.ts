@@ -32,6 +32,9 @@ export class LocationCardComponent {
     // }
   }
 
+  // Function to get only the information we need from the api repsonse
+  // this transforms from kelvin to celcius, and from meters to Km
+  // as well as removing decimalsF
   convertApiResponseToWeatherData(apiResponse: any): WeatherData {
     const humidity: number = apiResponse.main.humidity;
     const pressure: number = apiResponse.main.pressure;
@@ -44,10 +47,8 @@ export class LocationCardComponent {
     return new WeatherData(humidity, pressure, currentTemp, minTemp, maxTemp, visibility, description, wind);
   }
 
-  humidityToString(value: number): string {
-    return `${value}`;
-  }
-
+  // when the component gets loaded we call the get weather for it and we transform the
+  // title to include the country
   async ngOnInit(): Promise<void> {
     await this.getWeather();
     this.cardTitle = `${this.location.name}, ${this.location.country}`;
