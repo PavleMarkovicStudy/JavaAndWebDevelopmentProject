@@ -21,9 +21,8 @@ export class LocationService {
       const response = await this.http.get(url).toPromise();
       return response;
     } catch (error) {
-      // Handle errors here
       console.error(error);
-      throw error; // You can rethrow the error for the caller to handle
+      throw error;
     }
   }
 }

@@ -1,0 +1,24 @@
+<div
+  class="surface-overlay px-6 shadow-2 flex align-items-center justify-content-between relative lg:static"
+  style="min-height: 84px"
+>
+  <div class="text-3xl font-bold title">Weather App</div>
+  <div>
+    <p-toast></p-toast>
+    <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
+    <p-button
+      icon="pi pi-replay"
+      pTooltip="Refreshe weather data"
+      tooltipPosition="left"
+      styleClass="p-button-rounded p-button-raised p-button-secondary"
+      class="pr-2"
+    ></p-button>
+    <p-button
+      label="Remove Cards"
+      icon="pi pi-trash"
+      styleClass="p-button-raised p-button-secondary"
+      (click)="confirmRemove()"
+      class="pl-2"
+    ></p-button>
+  </div>
+</div>

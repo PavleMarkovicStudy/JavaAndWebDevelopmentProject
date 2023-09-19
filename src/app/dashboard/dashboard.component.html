@@ -1,9 +1,11 @@
-<div class="grid center-content no-background p-2 m-4">
-  <div
-    *ngFor="let location of locations"
-    class="col-12 md:col-4 lg:col-3 xl:col-2 flex flex-col center-content"
-    style="min-width: min-content"
-  >
-    <app-location-card [location]="location"></app-location-card>
+<div class="grid-container">
+  <div class="grid center-content p-2 m-4">
+    <div
+      *ngFor="let location of locations"
+      class="col-12 md:col-4 lg:col-3 xl:col-2 flex flex-col center-content"
+      style="min-width: min-content"
+    >
+      <app-location-card [location]="location"></app-location-card>
+    </div>
   </div>
 </div>

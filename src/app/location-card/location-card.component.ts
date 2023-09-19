@@ -25,9 +25,7 @@ export class LocationCardComponent {
     //   const weatherData = this.convertApiResponseToWeatherData(apiResponse);
     //   this.location.weather = weatherData;
     //   console.log(apiResponse, 'weather data  ');
-    //   // Handle search results here
     // } catch (error) {
-    //   // Handle errors here
     //   console.error(error);
     // }
   }

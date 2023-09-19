@@ -4,6 +4,8 @@
   justify-items: center;
 }
 
-.no-background {
-  background: none;
+.grid-container {
+  max-height: calc(100vh - (84px));
+  overflow-y: auto;
+  padding-bottom: 90px;
 }

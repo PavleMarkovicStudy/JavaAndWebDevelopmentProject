@@ -30,9 +30,7 @@ export class CityPickerComponent {
       const apiResponse = await this.fetchPossibleLocations(this.selectedLocationSearch);
       this.locationOptions = apiResponse.map(this.mapResponseToGeoLocation);
       console.log(this.locationOptions);
-      // Handle search results here
     } catch (error) {
-      // Handle errors here
       console.error(error);
     }
   }
@@ -64,7 +62,6 @@ export class CityPickerComponent {
       const response = await this.locationService.getLocationOptions(search, 5);
       return response;
     } catch (error) {
-      // Handle errors here
       console.error(error);
       throw error; // Re-throw the error to propagate it to the caller
     }
@@ -82,6 +79,7 @@ export class CityPickerComponent {
     this.visible = true;
   }
 
+  // function for adding the location to the global storage
   addLocationMethod() {
     if (this.selectedLocationObject) {
       console.log('adding location');
