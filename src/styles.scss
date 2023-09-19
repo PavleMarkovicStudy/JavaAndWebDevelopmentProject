@@ -1,4 +1,10 @@
-@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/themes/viva-light/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "~primeflex/primeflex.css";
+
+body {
+  background: linear-gradient(to bottom, #f0f0f0, #b7d8f6);
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+}

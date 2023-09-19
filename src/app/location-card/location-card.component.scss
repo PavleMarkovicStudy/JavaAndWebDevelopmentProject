@@ -2,6 +2,7 @@
 :host ::ng-deep .p-card {
   background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+  margin: 12px;
 }
 
 :host ::ng-deep .p-card .p-card-header {
@@ -12,4 +13,12 @@
 
 :host ::ng-deep .p-card .p-card-content {
   border-color: var(--teal-500);
+}
+
+.custom-divider {
+  border-bottom-color: #c7bfbf;
+  border-bottom-width: 0.5px;
+  border-bottom-style: solid;
+  width: 100%;
+  min-width: 100%;
 }
