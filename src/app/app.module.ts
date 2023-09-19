@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 // Module imports for PrimeNg
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DialogModule } from 'primeng/dialog';
+import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -26,6 +27,7 @@ import { LocationCardComponent } from './location-card/location-card.component';
     HttpClientModule,
     AppRoutingModule,
     OverlayPanelModule,
+    DividerModule,
     ButtonModule,
     BrowserAnimationsModule,
     AutoCompleteModule,

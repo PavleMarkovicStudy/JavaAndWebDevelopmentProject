@@ -44,6 +44,10 @@ export class LocationCardComponent {
     return new WeatherData(humidity, pressure, currentTemp, minTemp, maxTemp, visibility, description, wind);
   }
 
+  humidityToString(value: number): string {
+    return `${value}`;
+  }
+
   async ngOnInit(): Promise<void> {
     await this.getWeather();
     this.cardTitle = `${this.location.name}, ${this.location.country}`;

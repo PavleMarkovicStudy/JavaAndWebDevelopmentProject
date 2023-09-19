@@ -1,0 +1,15 @@
+// customizing card component according to PrimeNg documentation to make it have a slight background and be more noticeable
+:host ::ng-deep .p-card {
+  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+:host ::ng-deep .p-card .p-card-header {
+  background-color: var(--teal-500);
+  border-color: var(--teal-500);
+  color: #ffffff;
+}
+
+:host ::ng-deep .p-card .p-card-content {
+  border-color: var(--teal-500);
+}

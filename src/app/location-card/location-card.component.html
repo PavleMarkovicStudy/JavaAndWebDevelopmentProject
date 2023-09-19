@@ -1,12 +1,52 @@
-<p-card header="{{ cardTitle }}" subheader="{{ location.weather?.description }}" [style]="{ width: '360px' }">
+<p-card
+  header="{{ cardTitle }}"
+  subheader="{{ location.weather?.description }}"
+  [style]="{ width: '290px' }"
+  class="custom-card"
+>
   <ng-template pTemplate="header"></ng-template>
   <div class="flex flex-column align-items-center">
-    <div>{{ location.weather?.currentTemp }}</div>
-    <div>{{ location.weather?.minTemp }}</div>
-    <div>{{ location.weather?.maxTemp }}</div>
-    <div>{{ location.weather?.humidity }}</div>
-    <div>{{ location.weather?.pressure }}</div>
-    <div>{{ location.weather?.wind }}</div>
-    <div>{{ location.weather?.visibility }}</div>
+    <div class="text-2xl font-bold">{{ location.weather?.currentTemp }} °C</div>
+    <div style="width: 100%">
+      <p-divider type="solid"></p-divider>
+    </div>
+    <div class="row flex flex-row justify-content-between mb-4" style="width: 100%">
+      <div class="flex flex-column align-items-center pl-4">
+        <div class="text-center text-m font-medium">Min</div>
+        <div class="text-m font-medium">{{ location.weather?.minTemp }} °C</div>
+      </div>
+      <div class="flex flex-column align-items-center pr-4">
+        <div class="text-center text-m font-medium">Max</div>
+        <div class="text-m font-medium">{{ location.weather?.maxTemp }} °C</div>
+      </div>
+    </div>
+    <div class="row flex flex-row justify-content-between" style="width: 70%">
+      <div class="mr-3 font-medium">Humidity:</div>
+      <div class="flex">
+        <div class="text-lg font-medium">{{ location.weather?.humidity }}</div>
+        <div class="pr-3 text-base font-bold">%</div>
+      </div>
+    </div>
+    <div class="flex flex-row justify-content-between" style="width: 70%">
+      <div class="v font-medium">Pressure:</div>
+      <div class="flex align-items-end">
+        <div class="text-lg font-medium">{{ location.weather?.pressure }}</div>
+        <div class="pr-3 text-sm font-bold vertical-align-text-bottom">Bar</div>
+      </div>
+    </div>
+    <div class="flex flex-row justify-content-between" style="width: 70%">
+      <div class="mr-3 font-medium">Wind:</div>
+      <div class="flex align-items-end">
+        <div class="text-lg font-medium">{{ location.weather?.wind }}</div>
+        <div class="pr-3 text-sm font-bold vertical-align-text-bottom">Km/h</div>
+      </div>
+    </div>
+    <div class="flex flex-row justify-content-between" style="width: 70%">
+      <div class="mr-3 font-medium">visibility:</div>
+      <div class="flex align-items-end">
+        <div class="text-lg font-medium">{{ location.weather?.visibility }}</div>
+        <div class="pr-3 text-sm font-bold vertical-align-text-bottom">Km</div>
+      </div>
+    </div>
   </div>
 </p-card>
