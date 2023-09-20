@@ -11,127 +11,7 @@ export class DashboardComponent {
   initialDragLocation: GeoLocation | undefined;
   finalDragLocation: GeoLocation | undefined;
 
-  mockLocationOne: GeoLocation = {
-    name: 'Rome',
-    country: 'IT',
-    lat: 0,
-    lon: 0,
-    weather: {
-      humidity: 54,
-      pressure: 1.02,
-      currentTemp: 15,
-      minTemp: 10,
-      maxTemp: 20,
-      visibility: 0,
-      description: 'Cloudy',
-      wind: 3.4,
-    },
-  };
-  mockLocationTwo: GeoLocation = {
-    name: 'London',
-    country: 'GB',
-    lat: 0,
-    lon: 0,
-    weather: {
-      humidity: 80,
-      pressure: 1.02,
-      currentTemp: 4,
-      minTemp: 0,
-      maxTemp: 10,
-      visibility: 4.3,
-      description: 'rainny',
-      wind: 3.4,
-    },
-  };
-  mockLocationThree: GeoLocation = {
-    name: 'Rome',
-    country: 'IT',
-    lat: 0,
-    lon: 0,
-    weather: {
-      humidity: 54,
-      pressure: 1.02,
-      currentTemp: 15,
-      minTemp: 10,
-      maxTemp: 20,
-      visibility: 0,
-      description: 'Cloudy',
-      wind: 3.4,
-    },
-  };
-  mockLocationFour: GeoLocation = {
-    name: 'Rome',
-    country: 'IT',
-    lat: 0,
-    lon: 0,
-    weather: {
-      humidity: 54,
-      pressure: 1.02,
-      currentTemp: 15,
-      minTemp: 10,
-      maxTemp: 20,
-      visibility: 0,
-      description: 'Cloudy',
-      wind: 3.4,
-    },
-  };
-  mockLocationFive: GeoLocation = {
-    name: 'Rome',
-    country: 'IT',
-    lat: 0,
-    lon: 0,
-    weather: {
-      humidity: 54,
-      pressure: 1.02,
-      currentTemp: 15,
-      minTemp: 10,
-      maxTemp: 20,
-      visibility: 0,
-      description: 'Cloudy',
-      wind: 3.4,
-    },
-  };
-  mockLocationSix: GeoLocation = {
-    name: 'Rome',
-    country: 'IT',
-    lat: 0,
-    lon: 0,
-    weather: {
-      humidity: 54,
-      pressure: 1.02,
-      currentTemp: 15,
-      minTemp: 10,
-      maxTemp: 20,
-      visibility: 0,
-      description: 'Cloudy',
-      wind: 3.4,
-    },
-  };
-  mockLocationSeven: GeoLocation = {
-    name: 'Rome',
-    country: 'IT',
-    lat: 0,
-    lon: 0,
-    weather: {
-      humidity: 54,
-      pressure: 1.02,
-      currentTemp: 15,
-      minTemp: 10,
-      maxTemp: 20,
-      visibility: 0,
-      description: 'Cloudy',
-      wind: 3.4,
-    },
-  };
-  locations: GeoLocation[] = [
-    this.mockLocationOne,
-    this.mockLocationTwo,
-    this.mockLocationThree,
-    this.mockLocationFour,
-    this.mockLocationFive,
-    this.mockLocationSix,
-    this.mockLocationSeven,
-  ];
+  locations: GeoLocation[] = [];
   constructor(private globalService: GlobalService) {}
 
   dragStart(location: GeoLocation) {
@@ -168,13 +48,13 @@ export class DashboardComponent {
     ];
   }
 
-  // subscribeToLocations() {
-  //   this.globalService.getLocations().subscribe((locations) => {
-  //     this.locations = locations;
-  //   });
-  // }
+  subscribeToLocations() {
+    this.globalService.getLocations().subscribe((locations) => {
+      this.locations = locations;
+    });
+  }
 
-  // ngOnInit(): void {
-  //   this.subscribeToLocations();
-  // }
+  ngOnInit(): void {
+    this.subscribeToLocations();
+  }
 }

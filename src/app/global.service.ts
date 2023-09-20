@@ -25,13 +25,23 @@ export class GlobalService {
     this.locationSubject.next([...this.locations]);
   }
 
+  setAllLocations(locations: GeoLocation[]) {
+    this.locations = locations;
+    this.locationSubject.next([...this.locations]);
+  }
+
   // Function for deleting locations
-  deleteLocaiton(location: GeoLocation) {
+  deleteLocation(location: GeoLocation) {
     const index = this.locations.findIndex((item) => item === location);
     if (index !== -1) {
       this.locations.splice(index, 1);
       this.locationSubject.next([...this.locations]);
     }
+  }
+
+  deleteAllLocations() {
+    this.locations = [];
+    this.locationSubject.next([...this.locations]);
   }
   constructor() {}
 }

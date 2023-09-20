@@ -81,9 +81,23 @@ export class CityPickerComponent {
 
   // function for adding the location to the global storage
   addLocationMethod() {
-    if (this.selectedLocationObject) {
+    if (this.selectedLocationObject != undefined) {
       console.log('adding location');
       this.globalService.addLocation(this.selectedLocationObject);
+      this.saveLocationsToLocalStorage(this.selectedLocationObject);
+    }
+  }
+
+  saveLocationsToLocalStorage(location: GeoLocation) {
+    const storedLocationsJSON = localStorage.getItem('geoLocations');
+    if (storedLocationsJSON) {
+      const storedLocations: GeoLocation[] = JSON.parse(storedLocationsJSON);
+      storedLocations.push(location);
+      const newStoredLocationsJSON = JSON.stringify(storedLocations);
+      localStorage.setItem('geoLocations', newStoredLocationsJSON);
+    } else {
+      const initializedLocations = JSON.stringify([location]);
+      localStorage.setItem('geoLocations', initializedLocations);
     }
   }
 }

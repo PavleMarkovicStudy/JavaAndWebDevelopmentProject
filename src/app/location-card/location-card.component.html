@@ -29,7 +29,7 @@
       <div class="v font-medium">Pressure:</div>
       <div class="flex align-items-end">
         <div class="text-lg font-medium">{{ location.weather?.pressure }}</div>
-        <div class="pr-3 text-sm font-bold vertical-align-text-bottom">Bar</div>
+        <div class="pr-3 text-sm font-bold vertical-align-text-bottom">mb</div>
       </div>
     </div>
     <div class="flex flex-row justify-content-between" style="width: 70%">
@@ -46,5 +46,11 @@
         <div class="pr-3 text-sm font-bold vertical-align-text-bottom">Km</div>
       </div>
     </div>
+    <p-button
+      (click)="removeLocation(location)"
+      icon="pi pi-trash"
+      label="Remove"
+      styleClass="p-button-raised p-button-primary"
+    ></p-button>
   </div>
 </p-card>
