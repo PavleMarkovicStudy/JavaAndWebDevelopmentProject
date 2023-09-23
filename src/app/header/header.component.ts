@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
+import { Component } from '@angular/core';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { GlobalService } from '../global.service';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +9,6 @@ import { JsonPipe } from '@angular/common';
   providers: [ConfirmationService, MessageService],
 })
 export class HeaderComponent {
-  @Input() refreshWeatherInputFunction: (() => void) | undefined;
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
@@ -29,13 +27,6 @@ export class HeaderComponent {
         this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'All Cards Removed' });
       },
     });
-  }
-
-  // this function will call weather again
-  refreshWeather() {
-    if (this.refreshWeatherInputFunction) {
-      this.refreshWeatherInputFunction();
-    }
   }
 
   // function that handles removing cards from

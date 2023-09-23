@@ -1,3 +1,5 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
 <p-card
   header="{{ cardTitle }}"
   subheader="{{ location.weather?.description }}"
@@ -46,11 +48,19 @@
         <div class="pr-3 text-sm font-bold vertical-align-text-bottom">Km</div>
       </div>
     </div>
-    <p-button
-      (click)="removeLocation(location)"
-      icon="pi pi-trash"
-      label="Remove"
-      styleClass="p-button-raised p-button-primary"
-    ></p-button>
+    <div class="flex flex-row">
+      <p-button
+        (click)="getWeather()"
+        icon="pi pi-replay"
+        class="mt-5 pr-3"
+        styleClass="p-button-raised p-button-rounded p-button-primary"
+      ></p-button>
+      <p-button
+        (click)="removeLocation(location)"
+        icon="pi pi-trash"
+        class="mt-5"
+        styleClass="p-button-raised p-button-rounded p-button-warning"
+      ></p-button>
+    </div>
   </div>
 </p-card>

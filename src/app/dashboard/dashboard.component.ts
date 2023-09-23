@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList } from '@angular/core';
 import { GlobalService } from '../global.service';
 import { GeoLocation } from '../classes';
+import { LocationCardComponent } from '../location-card/location-card.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,7 @@ import { GeoLocation } from '../classes';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+  @ViewChildren(LocationCardComponent) locationComponents: QueryList<LocationCardComponent> | undefined;
   initialDragLocation: GeoLocation | undefined;
   finalDragLocation: GeoLocation | undefined;
 
@@ -16,7 +18,14 @@ export class DashboardComponent {
 
   dragStart(location: GeoLocation) {
     this.initialDragLocation = location;
-    console.log(location, 'drag started');
+  }
+
+  refreshWeatherData() {
+    console.log('refresh weather is being called on app dashboard component', 4);
+    this.locationComponents?.forEach((component) => {
+      console.log('the for each is beign called in the dashboard comp, for each location', 4);
+      component.getWeather();
+    });
   }
 
   dragEnd(location: GeoLocation) {}

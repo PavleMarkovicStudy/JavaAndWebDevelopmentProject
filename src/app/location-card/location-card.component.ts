@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { GeoLocation, WeatherData } from '../classes';
 import { WeatherService } from '../weather.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { GlobalService } from '../global.service';
 import { max } from 'rxjs';
 
@@ -8,6 +9,7 @@ import { max } from 'rxjs';
   selector: 'app-location-card',
   templateUrl: './location-card.component.html',
   styleUrls: ['./location-card.component.scss'],
+  providers: [ConfirmationService, MessageService],
 })
 export class LocationCardComponent {
   @Input()
@@ -15,18 +17,21 @@ export class LocationCardComponent {
   weatherData: any;
 
   cardTitle: string = '';
-  constructor(private weatherService: WeatherService, private globalService: GlobalService) {}
+  constructor(
+    private weatherService: WeatherService,
+    private globalService: GlobalService,
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
+  ) {}
 
   // Function to add weather to the location object
   async getWeather() {
-    console.log('Get Weather is being called');
+    console.log('Get Weather is being called on the location card component', 5);
     const locationWithWeather = this.location;
     try {
       const apiResponse = await this.weatherService.getWeather(this.location);
-      console.log(apiResponse);
       const weatherData = this.convertApiResponseToWeatherData(apiResponse);
       this.location.weather = weatherData;
-      console.log(apiResponse, 'weather data  ');
     } catch (error) {
       console.error(error);
     }
