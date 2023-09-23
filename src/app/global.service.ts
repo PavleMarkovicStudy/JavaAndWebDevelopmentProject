@@ -25,12 +25,14 @@ export class GlobalService {
     this.locationSubject.next([...this.locations]);
   }
 
+  // this function sets the whole locations array variable
+  // used in app.component.ts for loading from local storage
   setAllLocations(locations: GeoLocation[]) {
     this.locations = locations;
     this.locationSubject.next([...this.locations]);
   }
 
-  // Function for deleting locations
+  // Function for deleting locations individually, used in location-card
   deleteLocation(location: GeoLocation) {
     const index = this.locations.findIndex((item) => item === location);
     if (index !== -1) {
@@ -39,6 +41,7 @@ export class GlobalService {
     }
   }
 
+  // function that gets used in the header with the delete all cards button
   deleteAllLocations() {
     this.locations = [];
     this.locationSubject.next([...this.locations]);

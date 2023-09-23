@@ -1,7 +1,11 @@
+<!-- 2 elements that serve as a dialog and a message that apperas on the top right for confirming that the user wants to delete all cards -->
 <p-toast></p-toast>
 <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
+<!-- header that stays on top of the page -->
 <div class="surface-overlay px-6 shadow-2 flex justify-content-between relative lg:static" style="min-height: 84px">
+  <!-- title of the header -->
   <div class="text-3xl font-bold title align-self-center">Weather App</div>
+  <!-- component for making menu to be minimized into a button when screen is not size lg or bigger -->
   <a
     pRipple
     class="cursor-pointer block lg:hidden align-self-center text-700"
@@ -12,6 +16,7 @@
   >
     <i class="pi pi-bars text-4xl"></i>
   </a>
+  <!-- buttons and options for the header, add location and remove all locations -->
   <div
     class="flex-grow-1 justify-content-end hidden lg:flex absolute lg:static w-full surface-overlay left-0 top-100 z-1 shadow-2 lg:shadow-none"
   >

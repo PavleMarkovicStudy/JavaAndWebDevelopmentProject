@@ -2,7 +2,9 @@
   <p-dialog [(visible)]="visible" appendTo="body">
     <ng-template pTemplate="content align-content-center">
       <div class="card flex flex-column gap-2">
+        <!-- title of the dialog -->
         <h3 class="text-center m-2">Select Location</h3>
+        <!-- search bar or autocomplete component -->
         <p-autoComplete
           [(ngModel)]="selectedLocationSearch"
           [suggestions]="locationOptions"
@@ -13,7 +15,9 @@
           (onSelect)="selectMethod($event)"
           class="p2"
         ></p-autoComplete>
+        <!-- separator for when the autocomplete shows options it doesn't go over the button -->
         <div class="separator"></div>
+        <!-- button for adding a location after selecting -->
         <button
           pButton
           pRipple
@@ -24,6 +28,7 @@
       </div>
     </ng-template>
   </p-dialog>
+  <!-- button that will actually be displayed adn will make the dialog show up -->
   <p-button
     (click)="showCityPicker()"
     icon="pi pi-plus"

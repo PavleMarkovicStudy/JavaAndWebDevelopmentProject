@@ -1,12 +1,11 @@
-<p-toast></p-toast>
-<p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
+<!-- Component that represents one city or location with all of the available data -->
 <p-card
   header="{{ cardTitle }}"
   subheader="{{ location.weather?.description }}"
   [style]="{ width: '290px' }"
   class="custom-card"
 >
-  <ng-template pTemplate="header"></ng-template>
+  <!-- simple card that displays the data that the locaiton object has -->
   <div class="flex flex-column align-items-center">
     <div class="text-2xl font-bold">{{ location.weather?.currentTemp }} °C</div>
     <div class="custom-divider mt-1 mb-4"></div>
@@ -48,6 +47,7 @@
         <div class="pr-3 text-sm font-bold vertical-align-text-bottom">Km</div>
       </div>
     </div>
+    <!-- buttons at the bottom of the card for deleting the single card or refreshing the weather data if needed -->
     <div class="flex flex-row">
       <p-button
         (click)="getWeather()"

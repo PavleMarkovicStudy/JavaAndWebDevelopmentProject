@@ -20,22 +20,15 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { TooltipModule } from 'primeng/tooltip';
 
-import { ApiLogAndTestComponent } from './api-log-and-test/api-log-and-test.component';
 import { CityPickerComponent } from './city-picker/city-picker.component';
 import { LocationCardComponent } from './location-card/location-card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ApiLogAndTestComponent,
-    CityPickerComponent,
-    LocationCardComponent,
-    DashboardComponent,
-    HeaderComponent,
-  ],
+  declarations: [AppComponent, CityPickerComponent, LocationCardComponent, DashboardComponent, HeaderComponent],
   // after importing modules they have to be decalred here
+  // most of them are from primeNg and serve for styling and component use
   imports: [
     BrowserModule,
     HttpClientModule,

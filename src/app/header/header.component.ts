@@ -6,6 +6,7 @@ import { GlobalService } from '../global.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  // needed for the confirmation and message functionality
   providers: [ConfirmationService, MessageService],
 })
 export class HeaderComponent {

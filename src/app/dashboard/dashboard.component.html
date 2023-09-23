@@ -1,16 +1,19 @@
 <div class="grid-container">
   <div class="grid center-content p-2 m-4">
+    <!-- div with ng-for which iterates through all the locations that we've got in global service -->
+    <!-- all the classes are for making the grid responsive and the it has drag and drop functionality -->
+    <!-- the order of the locations can be changed through drag and drop with the mouse or even on smartphone -->
     <div
       *ngFor="let location of locations"
       class="col-12 md:col-4 lg:col-3 xl:col-2 flex flex-col center-content"
       style="min-width: min-content"
       pDraggable="locations"
       (onDragStart)="dragStart(location)"
-      (onDragEnd)="dragEnd(location)"
       dragEffect="link"
       pDroppable="locations"
       (onDrop)="drop(location)"
     >
+    <!-- it simply displays our location card component in a grid, the location itself is provided here as an input -->
       <app-location-card [location]="location"></app-location-card>
     </div>
   </div>

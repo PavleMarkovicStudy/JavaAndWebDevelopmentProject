@@ -1,9 +1,9 @@
-// Class for the Location objects that come from the back end
+// Classes to keep the front end organized
 
 import { visitAll } from '@angular/compiler';
 import { max } from 'rxjs';
 
-// Usefull for autocompletion in vscode and keeps order
+// everything in this app goes around this class, this is what the location card display
 export class GeoLocation {
   country: string;
   lat: number;
@@ -20,6 +20,7 @@ export class GeoLocation {
   }
 }
 
+// this class was needed, or usefull because the call for weather data was independet from the call for a location name and position
 export class WeatherData {
   humidity: number;
   pressure: number;

@@ -1,7 +1,6 @@
-import { Component, ViewChildren, QueryList } from '@angular/core';
+import { Component } from '@angular/core';
 import { GlobalService } from '../global.service';
 import { GeoLocation } from '../classes';
-import { LocationCardComponent } from '../location-card/location-card.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,32 +8,28 @@ import { LocationCardComponent } from '../location-card/location-card.component'
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  @ViewChildren(LocationCardComponent) locationComponents: QueryList<LocationCardComponent> | undefined;
+  // Variables that help for the drag and drop functionality
   initialDragLocation: GeoLocation | undefined;
   finalDragLocation: GeoLocation | undefined;
 
+  // location array that gets iterated through to display everything
   locations: GeoLocation[] = [];
   constructor(private globalService: GlobalService) {}
 
+  // function called when drag motion starts, it sets the initial location to the location where the drag started
   dragStart(location: GeoLocation) {
     this.initialDragLocation = location;
   }
 
-  refreshWeatherData() {
-    console.log('refresh weather is being called on app dashboard component', 4);
-    this.locationComponents?.forEach((component) => {
-      console.log('the for each is beign called in the dashboard comp, for each location', 4);
-      component.getWeather();
-    });
-  }
-
-  dragEnd(location: GeoLocation) {}
-
+  // function called when the dragged location gets dropped on another location or card
+  // it sets the final dragLocation to where the first one was dropped and then
+  // calls the function for switchin their indexes in the array of locations
   drop(location: GeoLocation) {
     this.finalDragLocation = location;
     this.exchangeLocationsIndexes();
   }
 
+  // function that changes indexes of the initial and final location for drag and drop
   exchangeLocationsIndexes() {
     if (this.initialDragLocation === undefined || this.finalDragLocation === undefined) {
       console.error('Initial or final location is undefined. Cannot swap.');
@@ -57,12 +52,16 @@ export class DashboardComponent {
     ];
   }
 
+  // subscribes to the locations array in global service
+  // this is needed since the locations get added through another component
+  // so keeping them in globalService allows reactivity to changes on this component through subscribe
   subscribeToLocations() {
     this.globalService.getLocations().subscribe((locations) => {
       this.locations = locations;
     });
   }
 
+  // it ensures that on init (when the component gets loaded to DOM), the function for subscribing gets called
   ngOnInit(): void {
     this.subscribeToLocations();
   }

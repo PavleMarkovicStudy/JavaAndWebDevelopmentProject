@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +12,8 @@ export class LocationService {
 
   constructor(private http: HttpClient) {}
 
-  // function for getting a location with lattitude and longitude
+  // function for getting a location latitude and longitude
+  // latitude and longitude are needed for then requesting weather data
   async getLocationOptions(search: string, limit: number): Promise<any> {
     const url = `${this.apiUrl}${search}&limit=${limit}&appid=${this.apiKey}`;
 

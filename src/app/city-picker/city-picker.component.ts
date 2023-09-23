@@ -12,13 +12,16 @@ import { GlobalService } from '../global.service';
   styleUrls: ['./city-picker.component.scss'],
 })
 export class CityPickerComponent {
-  // variable for display the dialog button or not
+  // variable for displaying the dialog button or not and its position
   visible: boolean = false;
   dialogPosition: string = 'top';
-  // selected city will be the citie the user selects at the end
+
+  // location search is used for the autocomplete as it is a string
   selectedLocationSearch: string = '';
+  // location object is the object we get when the add location button is pressed and returns object from api
   selectedLocationObject: GeoLocation | undefined = undefined;
-  // cityOptions will come from an api call where we'll get 5 options each search
+
+  // cityOptions will come from an api call where we'll get 5 max options each search
   // each search is going to be after enter or after about 1.5 seconds of no writing
   locationOptions: GeoLocation[] = [];
 
@@ -86,6 +89,8 @@ export class CityPickerComponent {
     }
   }
 
+  // function for handling local storage, objects are objects in javascript
+  // but they need to be saved as text or string to local storage
   saveLocationsToLocalStorage(location: GeoLocation) {
     const storedLocationsJSON = localStorage.getItem('geoLocations');
     if (storedLocationsJSON) {

@@ -1,8 +1,6 @@
-import { Component, ElementRef, QueryList, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { GlobalService } from './global.service';
 import { GeoLocation } from './classes';
-import { LocationCardComponent } from './location-card/location-card.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +8,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  @ViewChild(DashboardComponent) dashboardComponent: DashboardComponent | undefined;
-  title = 'java-and-web-development';
-  constructor(private globalService: GlobalService, private elementRef: ElementRef) {}
+  title = 'Weather App';
+  constructor(private globalService: GlobalService) {}
 
+  // this function retrieves data from local storage, which is the storage saved into the user browser
+  // and that persists closing the web app, parses that data from string to JSON getting readable js 
+  // objects, and then updates the GlobalService with it, which is what the other components use
   retrieveFromLocalStorage() {
     const storedLocationsJSON = localStorage.getItem('geoLocations');
     if (storedLocationsJSON != null) {
@@ -22,11 +22,7 @@ export class AppComponent {
     }
   }
 
-  refreshWeatherData() {
-    console.log('refresh weather is being called on app component', 3);
-    this.dashboardComponent?.refreshWeatherData();
-  }
-
+  // calls the function on init, since this is app component, when the app gets loaded
   ngOnInit(): void {
     this.retrieveFromLocalStorage();
   }
