@@ -1,27 +1,30 @@
-# JavaAndWebDevelopment
+## Requirements
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+For development, you will only need Node.js and a node global package, NPM , installed in your environement.
 
-## Development server
+### Node
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- #### Node installation on Windows
 
-## Code scaffolding
+  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
+  Also, be sure to have git available in your PATH, npm might need it (You can find git [here](https://git-scm.com/)).
+  
+  If the installation was successful, you should be able to run the following command.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    $ node --version
+    v16.14.2
 
-## Build
+    $ npm --version
+    8.5.0
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ ## Install
 
-## Running unit tests
+    $ git clone https://github.com/PavleMarkovicStudy/JavaAndWebDevelopmentProject.git
+    $ cd JavaAndWebDevelopmentProject
+    $ npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ ## Running the project
 
-## Running end-to-end tests
+    $ ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Important to declare that I've used the same instructions from a nodejs repository on which I'm working on my current job and I've simply changed links and names to make it work
