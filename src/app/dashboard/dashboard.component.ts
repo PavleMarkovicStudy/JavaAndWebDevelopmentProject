@@ -50,6 +50,7 @@ export class DashboardComponent {
       this.locations[finalIndex],
       this.locations[initialIndex],
     ];
+    localStorage.setItem('geoLocations', JSON.stringify(this.locations));
   }
 
   // subscribes to the locations array in global service
