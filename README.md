@@ -17,6 +17,8 @@ For development, you will only need Node.js and a node global package, NPM , ins
     $ npm --version
     8.5.0
 
+    newer versions should work as well
+
  ## Install
 
     $ git clone https://github.com/PavleMarkovicStudy/JavaAndWebDevelopmentProject.git
