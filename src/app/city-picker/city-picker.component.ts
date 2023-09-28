@@ -86,6 +86,7 @@ export class CityPickerComponent {
       this.globalService.addLocation(this.selectedLocationObject);
       this.saveLocationsToLocalStorage(this.selectedLocationObject);
       this.visible = false;
+      this.selectedLocationSearch = '';
     }
   }
 
