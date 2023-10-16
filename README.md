@@ -19,11 +19,21 @@ For development, you will only need Node.js and a node global package, NPM , ins
 
     newer versions should work as well
 
- ## Install
+ ## Install through git
+
+   open a terminal and paste the following commands one by one
 
     $ git clone https://github.com/PavleMarkovicStudy/JavaAndWebDevelopmentProject.git
     $ cd JavaAndWebDevelopmentProject
-    $ npm install
+    $ npm install
+
+ ## If zip folder was downloaded
+   
+   there shuold not be a need for any npm install since all packages shuold be included in the zip folder
+   even though all the files should be there, npm and node must still be installed, and angular cli must be in PATH so make sure to run the following command 
+   regardless of having the node_modules folder already there, and make sure the terminal is on the project folder
+
+    $ npm install @angular/cli
 
  ## Running the project
 
